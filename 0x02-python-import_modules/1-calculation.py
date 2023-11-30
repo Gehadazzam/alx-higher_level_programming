@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    """print sum, subestruction, multiply, divide"""
+    """print sum, subestruction, multiply, divide of 10 and 5"""
 from calculator_1 import add, sub, div, mul
 a = 10
 b = 5
