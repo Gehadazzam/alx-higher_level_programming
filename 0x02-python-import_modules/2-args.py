@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
+    """print the number of arguments"""
     import sys
     argc = len(sys.argv) - 1
     arguments = sys.argv[1:]
