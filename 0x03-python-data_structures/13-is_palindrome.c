@@ -41,7 +41,7 @@ int length = 0, x = 0, *array;
 	array = malloc(sizeof(int) * length);
 	if (!array)
 		return (0);
-	for (x = 0; x <= length - 1; x++)
+	for (x = 0; x < length; x++)
 {
 		array[x] = current->n;
 		current = current->next;
