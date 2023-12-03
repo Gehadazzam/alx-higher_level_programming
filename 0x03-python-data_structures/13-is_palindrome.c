@@ -1,56 +1,55 @@
 #include "lists.h"
 #include <stdlib.h>
+
 /**
-*check_list - compare the list
+* check_list - Recursively checks if an array is a palindrome
+* @array: Array to be checked
+* @start: Starting index
+* @end: Ending index
 *
-*@array: first parameter
-*
-*@idx1: seconed one
-*
-*@idx2: third one
-*
-*Return: 1 or 0
+* Return: 1 if array is palindrome, 0 otherwise
 */
-int check_list(int *array, int idx1, int idx2)
+int check_list(int *array, int start, int end)
 {
-	if (idx1 > idx2)
+	if (start >= end)
 		return (1);
-	if (array[idx1] != array[idx2])
+	if (array[start] != array[end])
 		return (0);
-	return (check_list(array, idx1 + 1, idx2 - 1));
+	return (check_list(array, start + 1, end - 1));
 }
+
 /**
-*is_palindrome - check if the list is palindrome
+* is_palindrome - Checks if a linked list is a palindrome
+* @head: Pointer to the head of the linked list
 *
-*@head: pointer to pointer of the list
-*
-*Return: 1 or 0
+* Return: 1 if list is a palindrome, 0 otherwise
 */
 int is_palindrome(listint_t **head)
 {
 const listint_t *current = *head;
-int length = 0, x = 0, *array;
+int length = 0, i = 0, *array, result;
+
 	if (!*head)
 		return (1);
+
 	while (current)
 {
 		current = current->next;
 		length++;
 }
-	current = *head;
+
 	array = malloc(sizeof(int) * length);
 	if (!array)
 		return (0);
-	for (x = 0; x < length; x++)
+
+	current = *head;
+	while (current)
 {
-		array[x] = current->n;
-		current = current->next;
+		array[i++] = current->n;
+	current = current->next;
 }
-	if (check_list(array, 0, length - 1) == 1)
-{
-		free(array);
-		return (1);
-}
+
+	result = check_list(array, 0, length - 1);
 	free(array);
-	return (0);
+	return (result);
 }
