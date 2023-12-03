@@ -1,23 +1,21 @@
 #include "lists.h"
 #include <stdlib.h>
-
 /**
-* check_list - Recursively checks if an array is a palindrome
+* check_palindrome - Recursively checks if an array is a palindrome
 * @array: Array to be checked
 * @start: Starting index
 * @end: Ending index
 *
 * Return: 1 if array is palindrome, 0 otherwise
 */
-int check_list(int *array, int start, int end)
+int check_palindrome(int *array, int start, int end)
 {
 	if (start >= end)
 		return (1);
 	if (array[start] != array[end])
 		return (0);
-	return (check_list(array, start + 1, end - 1));
+	return (check_palindrome(array, start + 1, end - 1));
 }
-
 /**
 * is_palindrome - Checks if a linked list is a palindrome
 * @head: Pointer to the head of the linked list
@@ -49,7 +47,7 @@ int length = 0, i = 0, *array, result;
 	current = current->next;
 }
 
-	result = check_list(array, 0, length - 1);
+	result = check_palindrome(array, 0, length - 1);
 	free(array);
 	return (result);
 }
