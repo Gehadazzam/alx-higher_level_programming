@@ -1,7 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
 /**
-* check_palindrome - Recursively checks if an array is a palindrome
+* check_palindrome -checks if an array is a palindrome
 * @array: Array to be checked
 * @start: Starting index
 * @end: Ending index
@@ -41,6 +41,7 @@ int length = 0, i = 0, *array, result;
 		return (0);
 
 	current = *head;
+	i = 0;
 	while (current)
 {
 		array[i++] = current->n;
