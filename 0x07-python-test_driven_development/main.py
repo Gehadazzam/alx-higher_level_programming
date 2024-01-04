@@ -1,15 +1,6 @@
-#!/usr/bin/python3
-add_integer = __import__('0-add_integer').add_integer
+##!/usr/bin/python3
+matrix_mul = __import__('100-matrix_mul').matrix_mul
 
-print(add_integer(1, 2))
-print(add_integer(100, -2))
-print(add_integer(2))
-print(add_integer(100.3, -2))
-try:
-    print(add_integer(4, "School"))
-except Exception as e:
-    print(e)
-try:
-    print(add_integer(None))
-except Exception as e:
-    print(e)
+print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+print(matrix_mul([[7, 2]], [[9, 4], [8, 5]]))
+print(matrix_mul([[8, 7], [3, 7]], [[7, 3, 1],[5, 6, 2]]))

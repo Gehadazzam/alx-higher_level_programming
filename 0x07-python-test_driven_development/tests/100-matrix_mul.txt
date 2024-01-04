@@ -1,0 +1,39 @@
+import function from module:
+
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+    >>> matrix_mul(["Gehad", 3], 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b must be a list
+
+    >>> matrix_mul([[7, 2]], [[9, 4], [2, 6], [8, 5]])
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a and m_b can't be multiplied
+
+    >>> matrix_mul(["Gehad", 3], [5])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list of lists
+
+    >>> matrix_mul([["Gehad"], [3]], [ [7],[5]])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a should contain only integers or floats
+
+    >>> matrix_mul([[8], [3]], [[7],[5]])
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a and m_b can't be multiplied
+
+    >>> matrix_mul([[8, 7], [3, 7]], [[7, 1],[5, 2]])
+    [[91, 22], [56, 17]]
+
+    >>> matrix_mul([[8, 7], [3, 7]], [[7, 3, 1],[5, 2]])
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of m_b must be of the same size
+
+    >>> matrix_mul([[8, 7], [3, 7]], [[7, 3, 1],[5, 6, 2]])
+    [[91, 66, 22], [56, 51, 17]]
