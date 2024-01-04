@@ -58,10 +58,10 @@ class Rectangle:
         """print rectangle with specific char"""
         if self.__height == 0 or self.__width == 0:
             return ""
-        string = ""
-        for _ in range(self.height):
-            string += "#" * self.width + "\n"
-        return string[:-1]
+        return "\n".join(
+            [str(self.print_symbol) * self.__width
+             for _ in range(self.__height)]
+        )
 
     def __repr__(self):
         """return statment about our rectangle"""
