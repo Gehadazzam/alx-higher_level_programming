@@ -52,12 +52,12 @@ class Rectangle:
 
     def __str__(self):
         """print rectangle with specific char"""
+        if self.__height == 0 or self.__width == 0:
+            return ""
         string = ""
-        if self.height == 0 or self.width == 0:
-            return string
         for _ in range(self.height):
             string += "#" * self.width + "\n"
-        return string
+        return string[:-1]
 
     def __repr__(self):
         """return statment about our rectangle"""
