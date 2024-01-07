@@ -1,12 +1,17 @@
 #!/usr/bin/python3
 """
 
-Module used to multibly two metrix
+Module used to multibly two metrix with numpy
 
 """
 
 import numpy as ny
+
+
 def lazy_matrix_mul(m_a, m_b):
+    """ multiby two matrix
+    parameters: m_a and m_b should be a list of list
+    return new metrix contain myltiply"""
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):

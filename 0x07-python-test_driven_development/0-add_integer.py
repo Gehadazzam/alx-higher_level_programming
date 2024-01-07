@@ -4,6 +4,8 @@
 Module used to add two integers
 
 """
+
+
 def add_integer(a, b=98):
     """add two numbers.
     Parameters: a: int or float, b: int or float, by dafult = 98

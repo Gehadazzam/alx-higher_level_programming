@@ -16,8 +16,7 @@ def matrix_divided(matrix, div):
         for row in matrix
     ):
         raise TypeError(
-            "matrix must be a matrix (list of lists) of integers/floats"
-        )
+            "matrix must be a matrix (list of lists) of integers/floats")
     if len(set(len(row) for row in matrix)) > 1:
         raise TypeError("Each row of the matrix must have the same size")
     if not isinstance(div, (int, float)):

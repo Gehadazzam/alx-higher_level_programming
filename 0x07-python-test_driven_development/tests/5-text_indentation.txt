@@ -1,0 +1,32 @@
+Import function from module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test with an integer:
+    >>> text_indentation(98)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test with a float:
+    >>> text_indentation(98.6)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test with a list:
+    >>> text_indentation(["ji, cat"])
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test with a dic:
+    >>> text_indentation({"Name": "GEhad"})
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Test with long sentence:
+    >>> text_indentation("""Gehad, loves cats! How cute loving those cats^^!. I want to adopt new one""")
+    Gehad, loves cats! How cute loving those cats^^!.
+    <BLANKLINE>
+     I want to adopt new one
