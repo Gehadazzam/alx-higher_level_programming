@@ -2,11 +2,29 @@ import function from module:
 
 >>> lazy_matrix_mul= __import__('101-lazy_matrix_mul').lazy_matrix_mul
 
+Test with one list:
     >>> lazy_matrix_mul(["Gehad", 3], 5)
     Traceback (most recent call last):
     ...
     TypeError: m_b must be a list
 
+    >>> lazy_matrix_mul("Gehad", [7,5])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list
+
+Test with empty list:
+    >>> lazy_matrix_mul([[]], [[9, 4], [2, 6], [8, 5]])
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a can't be empty
+
+    >>> lazy_matrix_mul([[9, 4], [2, 6], [8, 5]], [[], []])
+    Traceback (most recent call last):
+    ...
+    ValueError: m_b can't be empty
+
+Test with deferent length:
     >>> lazy_matrix_mul([[7, 2]], [[9, 4], [2, 6], [8, 5]])
     Traceback (most recent call last):
     ...
@@ -16,6 +34,11 @@ import function from module:
     Traceback (most recent call last):
     ...
     TypeError: m_a must be a list of lists
+
+    >>> lazy_matrix_mul([[4, 8], ["2", "8"]], [8, 5, "ji"])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b must be a list of lists
 
     >>> lazy_matrix_mul([["Gehad"], [3]], [ [7],[5]])
     Traceback (most recent call last):
@@ -30,6 +53,11 @@ import function from module:
     >>> lazy_matrix_mul([[8, 7], [3, 7]], [[7, 1],[5, 2]])
     array([[91, 22],
            [56, 17]])
+
+    >>> lazy_matrix_mul([[8, 4, 8, 7], [3, 7]], [[7, 1],[5, 2]])
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of m_a must be of the same size
 
     >>> lazy_matrix_mul([[8, 7], [3, 7]], [[7, 3, 1],[5, 2]])
     Traceback (most recent call last):

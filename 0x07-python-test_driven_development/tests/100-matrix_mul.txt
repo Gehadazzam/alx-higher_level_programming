@@ -2,11 +2,29 @@ import function from module:
 
 >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
 
+Test with one list:
     >>> matrix_mul(["Gehad", 3], 5)
     Traceback (most recent call last):
     ...
     TypeError: m_b must be a list
 
+    >>> matrix_mul("Gehad", [7,5])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list
+
+Test with empty list:
+    >>> matrix_mul ([[]], [[9, 4], [2, 6], [8, 5]])
+    Traceback (most recent call last):
+    ...
+    ValueError: m_a can't be empty
+
+    >>> matrix_mul ([[9, 4], [2, 6], [8, 5]], [[], []])
+    Traceback (most recent call last):
+    ...
+    ValueError: m_b can't be empty
+
+Test with deferent length:
     >>> matrix_mul([[7, 2]], [[9, 4], [2, 6], [8, 5]])
     Traceback (most recent call last):
     ...
@@ -17,6 +35,11 @@ import function from module:
     ...
     TypeError: m_a must be a list of lists
 
+    >>> matrix_mul([[4, 8], ["2", "8"]], [8, 5, "ji"])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b must be a list of lists
+
     >>> matrix_mul([["Gehad"], [3]], [ [7],[5]])
     Traceback (most recent call last):
     ...
@@ -26,6 +49,11 @@ import function from module:
     Traceback (most recent call last):
     ...
     ValueError: m_a and m_b can't be multiplied
+
+    >>> matrix_mul([[8, 4, 8, 7], [3, 7]], [[7, 1],[5, 2]])
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of m_a must be of the same size
 
     >>> matrix_mul([[8, 7], [3, 7]], [[7, 1],[5, 2]])
     [[91, 22], [56, 17]]
