@@ -17,9 +17,20 @@ Test with one integer:
     ..
     TypeError: first_name must be a string
 
+    >>> say_my_name("Gehad", 12)
+    Traceback (most recent call last):
+    ..
+    TypeError: last_name must be a string
+
 Test with no names:
     >>> say_my_name("", "")
     My name is  
+
+Test with a dic:
+    >>> say_my_name({"Gehad", "Gamal"})
+    Traceback (most recent call last):
+    ..
+    TypeError: first_name must be a string
 
 Test with a list:
     >>> say_my_name(["Gehad", "Gamal"])

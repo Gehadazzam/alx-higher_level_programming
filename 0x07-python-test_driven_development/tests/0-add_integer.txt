@@ -25,6 +25,15 @@ Test with two big integers:
     >>> add_integer(8675, 3565.4)
     12240
 
+    >>> add_integer(79080, 222)
+    79302
+
+Test with a list of integers:
+    >>> add_integer([9, 8])
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+    
 Test with one string:
     >>> add_integer("hi")
     Traceback (most recent call last):

@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-say_my_name = __import__("3-say_my_name").say_my_name
+matrix_divided = __import__('2-matrix_divided').matrix_divided
 
-say_my_name(12, "Smith")
-say_my_name("Walter", "White")
-say_my_name("Bob")
-try:
-    say_my_name(12, "White")
-except Exception as e:
-    print(e)
+matrix = [
+    [3, 2, 3],
+    [12, 5, 9]
+]
+print(matrix_divided(matrix, 701))
+print(matrix)
