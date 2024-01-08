@@ -36,7 +36,9 @@ Test BaseGeometry class
 
     >>> base.integer_validator("height", 798)
 
-    
+    >>> base.integer_validator(hi, 12)
+    Traceback (most recent call last):
+    NameError: name 'hi' is not defined
 
     >>> base.integer_validator("count")
     Traceback (most recent call last):
