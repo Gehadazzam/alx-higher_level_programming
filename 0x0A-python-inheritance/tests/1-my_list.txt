@@ -19,11 +19,21 @@ Test with regural list:
     >>> print(first)
     [1, 4, 2, 3, 5]
 
-Test with empty list:
+
+Test with negative num:
     >>> seconed = MyList()
-    >>> issubclass(type(seconed), list)
-    True
+    >>> seconed.append(-1)
+    >>> seconed.append(-4)
     >>> print(seconed)
-    []
+    [-1, -4]
     >>> seconed.print_sorted()
+    [-4, -1]
+
+Test with empty list:
+    >>> Third = MyList()
+    >>> issubclass(type(Third), list)
+    True
+    >>> print(Third)
+    []
+    >>> Third.print_sorted()
     []
