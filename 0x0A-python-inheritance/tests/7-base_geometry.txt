@@ -40,6 +40,12 @@ Test BaseGeometry class
     Traceback (most recent call last):
     NameError: name 'hi' is not defined
 
+    >>> base.integer_validator("count", int(12.5))
+
+    >>> base.integer_validator("count", int("hi"))
+    Traceback (most recent call last):
+    ValueError: invalid literal for int() with base 10: 'hi'
+
     >>> base.integer_validator("count")
     Traceback (most recent call last):
     TypeError: integer_validator() missing 1 required positional argument: 'value'
