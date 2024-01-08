@@ -5,8 +5,8 @@ Module to add attribute
 
 
 def add_attribute(obj, attr, value):
-    """raise an error if we can add new one"""
-    if not hasattr(obj, "__dict__") and not hasattr(obj, "__slots__"):
+    """Add a new attribute to an object if possible."""
+    if not hasattr(obj, "__dict__"):
         raise TypeError("can't add new attribute")
 
-    setattr(obj, attr, attr)
+    setattr(obj, attr, value)
