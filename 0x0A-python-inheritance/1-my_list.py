@@ -5,6 +5,8 @@
 class MyList(list):
     """creat a subclass"""
 
+    pass
+
     def print_sorted(self):
         """print the list sorted"""
         print(sorted(self))
