@@ -1,14 +1,29 @@
 Test our subclass
     >>> MyList = __import__('1-my_list').MyList
-    >>> my_list = MyList()
-    >>> my_list.append(1)
-    >>> my_list.append(4)
-    >>> my_list.append(2)
-    >>> my_list.append(3)
-    >>> my_list.append(5)
-    >>> print(my_list)
+
+Test with regural list:
+    >>> first = MyList()
+    >>> issubclass(type(first), list)
+    True
+    >>> isinstance(first, MyList)
+    True
+    >>> first.append(1)
+    >>> first.append(4)
+    >>> first.append(2)
+    >>> first.append(3)
+    >>> first.append(5)
+    >>> print(first)
     [1, 4, 2, 3, 5]
-    >>> my_list.print_sorted()
+    >>> first.print_sorted()
     [1, 2, 3, 4, 5]
-    >>> print(my_list)
+    >>> print(first)
     [1, 4, 2, 3, 5]
+
+Test with empty list:
+    >>> seconed = MyList()
+    >>> issubclass(type(seconed), list)
+    True
+    >>> print(seconed)
+    []
+    >>> seconed.print_sorted()
+    []
