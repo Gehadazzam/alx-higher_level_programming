@@ -39,4 +39,3 @@ Test BaseGeometry class
     >>> base.integer_validator(12)
     Traceback (most recent call last):
     TypeError: integer_validator() missing 1 required positional argument: 'value'
-
