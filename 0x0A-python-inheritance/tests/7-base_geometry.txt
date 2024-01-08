@@ -32,6 +32,12 @@ Test BaseGeometry class
     Traceback (most recent call last):
     TypeError: count must be an integer
 
+    >>> base.integer_validator("count", 12)
+
+    >>> base.integer_validator("height", 798)
+
+    
+
     >>> base.integer_validator("count")
     Traceback (most recent call last):
     TypeError: integer_validator() missing 1 required positional argument: 'value'
