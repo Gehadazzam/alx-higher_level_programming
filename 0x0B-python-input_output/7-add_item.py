@@ -13,6 +13,6 @@ try:
 
 except Exception:
     myfile = []
-
-myfile.extend(argv)
-save_to_json_file(argv, "add_item.json")
+if __name__ == "__main__":
+    myfile.extend(argv)
+    save_to_json_file(argv, "add_item.json")
