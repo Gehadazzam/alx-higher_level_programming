@@ -24,11 +24,22 @@ Test BaseGeometry class
     Traceback (most recent call last):
     TypeError: count must be an integer
 
-    >>> base.integer_validator("count", {})
+    >>> base.integer_validator("count", {3, 4})
     Traceback (most recent call last):
     TypeError: count must be an integer
 
     >>> base.integer_validator("count", "hi")
+    Traceback (most recent call last):
+    TypeError: count must be an integer
+
+    >>> base.integer_validator("count", True)
+
+
+    >>> base.integer_validator("count", None)
+    Traceback (most recent call last):
+    TypeError: count must be an integer
+
+    >>> base.integer_validator("count", (4,))
     Traceback (most recent call last):
     TypeError: count must be an integer
 
