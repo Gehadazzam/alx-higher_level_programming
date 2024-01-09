@@ -11,8 +11,8 @@ argv = sys.argv[1:]
 try:
     myfile = load_from_json_file("add_item.json")
 
-except Exception:
+except FileNotFoundError:
     myfile = []
-if __name__ == "__main__":
-    myfile.extend(argv)
-    save_to_json_file(argv, "add_item.json")
+
+myfile.extend(argv)
+save_to_json_file(myfile, "add_item.json")
