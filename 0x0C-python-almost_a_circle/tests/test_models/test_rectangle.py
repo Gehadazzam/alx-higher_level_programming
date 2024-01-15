@@ -21,6 +21,18 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(8, 7, 9, 3, 8, 5, 2)
 
+    def test_ides(self):
+        r1 = Rectangle(4, 6, 8, 4, 50)
+        r2 = Rectangle(1, 3)
+        r3 = Rectangle(5, 8, 7)
+        r4 = Rectangle(4, 8, 5, 8, 45)
+        r5 = Rectangle(8, 7, 5, 4)
+        self.assertEqual(r1.id, 50)
+        self.assertEqual(r2.id, 1)
+        self.assertEqual(r3.id, 2)
+        self.assertEqual(r4.id, 45)
+        self.assertEqual(r5.id, 3)
+
     def test_more_args(self):
 
         rec = Rectangle(4, 2, 6)
