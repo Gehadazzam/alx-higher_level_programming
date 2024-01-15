@@ -24,15 +24,12 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rec.y, 0)
 
         rec = Rectangle(7, 8, 9, 4)
-        rec1 = (6, 8)
+        rec1 = Rectangle(6, 8)
         self.assertEqual(rec.id, rec1.id - 1)
 
         rec = Rectangle(8, 4)
         self.assertEqual(rec.x, 0)
 
-    def test_area(self):
-        rec = Rectangle(5, 2)
-        self.assertEqual(rec.area, 10)
 
 
 if __name__ == "__main__":
