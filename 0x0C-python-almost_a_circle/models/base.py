@@ -124,23 +124,23 @@ class Base:
         turtle.bgcolor("white")
         turtle.speed(1)
 
-        def draw_shape(shape):
+        def draw_line(line):
             turtle.penup()
-            turtle.goto(shape.x, shape.y)
+            turtle.goto(line.x, line.y)
             turtle.pendown()
             turtle.color("black", "cyan")
             turtle.begin_fill()
             for _ in range(2):
-                turtle.forward(shape.width)
+                turtle.forward(line.width)
                 turtle.left(90)
-                turtle.forward(shape.height)
+                turtle.forward(line.height)
                 turtle.left(90)
             turtle.end_fill()
 
-        for rect in list_rectangles:
-            draw_shape(rect)
+        for rec in list_rectangles:
+            draw_line(rec)
 
-        for sq in list_squares:
-            draw_shape(sq)
+        for s in list_squares:
+            draw_line(s)
 
         turtle.done()
