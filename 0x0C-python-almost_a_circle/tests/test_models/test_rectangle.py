@@ -7,6 +7,9 @@ from models.rectangle import Rectangle
 class TestRectangle(unittest.TestCase):
     def inheritance(self):
         self.assertIsInstance(Rectangle(7, 8), Base)
+        r2 = Rectangle(6, 9)
+        self.assertIsInstance(r2, Base)
+        self.assertIsInstance(r2, Rectangle)
 
     def test_args(self):
         with self.assertRaises(TypeError):
