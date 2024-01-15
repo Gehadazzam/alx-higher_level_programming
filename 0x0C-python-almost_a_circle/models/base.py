@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """Module for Base class."""
 
+
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -114,3 +116,31 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """opens a window and draws all the Rectangles and Squares"""
+
+        turtle.bgcolor("white")
+        turtle.speed(1)
+
+        def draw_shape(shape):
+            turtle.penup()
+            turtle.goto(shape.x, shape.y)
+            turtle.pendown()
+            turtle.color("black", "cyan")
+            turtle.begin_fill()
+            for _ in range(2):
+                turtle.forward(shape.width)
+                turtle.left(90)
+                turtle.forward(shape.height)
+                turtle.left(90)
+            turtle.end_fill()
+
+        for rect in list_rectangles:
+            draw_shape(rect)
+
+        for sq in list_squares:
+            draw_shape(sq)
+
+        turtle.done()
