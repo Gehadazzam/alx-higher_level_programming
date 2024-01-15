@@ -23,6 +23,12 @@ class TestBase(unittest.TestCase):
         base.id = 70
         self.assertEqual(base.id, 70)
         
+        self.assertEqual("test", Base("test").id)
+        self.assertEqual(45.7, Base(45.7).id)
+
+        with self.assertRaises(TypeError):
+            base = Base(5, 8)
+
     def test_ides(self):
         b1 = Base(67)
         b2 = Base()
@@ -33,8 +39,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b3.id, 2)
         self.assertEqual(b4.id, 3)
 
-        self.assertEqual("test", Base("test").id)
-        self.assertEqual(45.7, Base(45.7).id)
+        
 
     def test_to_json(self):
         self.assertEqual(Base.to_json_string([]), "[]")
