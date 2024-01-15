@@ -121,14 +121,14 @@ class Base:
     def draw(list_rectangles, list_squares):
         """opens a window and draws all the Rectangles and Squares"""
 
-        turtle.bgcolor("white")
-        turtle.speed(1)
+        turtle.bgcolor("pink")
+        turtle.speed(3)
 
         def draw_line(line):
             turtle.penup()
             turtle.goto(line.x, line.y)
             turtle.pendown()
-            turtle.color("black", "cyan")
+            turtle.color("blue", "white")
             turtle.begin_fill()
             for _ in range(2):
                 turtle.forward(line.width)
