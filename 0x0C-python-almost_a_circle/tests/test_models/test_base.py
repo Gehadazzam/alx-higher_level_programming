@@ -22,6 +22,15 @@ class TestBase(unittest.TestCase):
         base = Base(98)
         base.id = 70
         self.assertEqual(base.id, 70)
+        
+        b1 = Base(67)
+        b2 = Base()
+        b3 = Base()
+        b4 = Base()
+        self.assertEqual(b1.id, 67)
+        self.assertEqual(b2.id, 1)
+        self.assertEqual(b3.id, 2)
+        self.assertEqual(b4.id, 3)
 
         self.assertEqual("test", Base("test").id)
         self.assertEqual(45.7, Base(45.7).id)
