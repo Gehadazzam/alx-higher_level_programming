@@ -23,6 +23,7 @@ class TestBase(unittest.TestCase):
         base.id = 70
         self.assertEqual(base.id, 70)
         
+    def test_ides(self):
         b1 = Base(67)
         b2 = Base()
         b3 = Base()
