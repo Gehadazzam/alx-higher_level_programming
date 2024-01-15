@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import unittest
-import json
 
 from models.base import Base
 
@@ -19,6 +18,13 @@ class TestBase(unittest.TestCase):
 
         rectangle = Base()
         self.assertEqual(rectangle.id, 2)
+        
+        base = Base(98)
+        base.id = 70
+        self.assertEqual(base.id, 70)
+
+        self.assertEqual("test", Base("test").id)
+        self.assertEqual(45.7, Base(45.7).id)
 
     def test_to_json(self):
         self.assertEqual(Base.to_json_string([]), "[]")
