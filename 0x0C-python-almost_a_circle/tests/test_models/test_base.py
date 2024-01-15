@@ -46,10 +46,10 @@ class TestBase(unittest.TestCase):
         json_string = '[{"id": 4}, {"id": 6}]'
         self.assertEqual(Base.to_json_string(list), json_string)
 
-
     def test_error(self):
         with self.assertRaises(AttributeError):
             Base.__nb_objects
+
 
 if __name__ == "__main__":
     unittest.main()

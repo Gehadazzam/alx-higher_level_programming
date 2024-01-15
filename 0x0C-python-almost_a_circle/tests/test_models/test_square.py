@@ -43,6 +43,5 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(sec.id, sec1.id - 1)
 
 
-
 if __name__ == "__main__":
     unittest.main()
