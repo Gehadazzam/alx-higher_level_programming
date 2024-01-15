@@ -18,11 +18,11 @@ class TestBase(unittest.TestCase):
 
         rectangle = Base()
         self.assertEqual(rectangle.id, 2)
-        
+
         base = Base(98)
         base.id = 70
         self.assertEqual(base.id, 70)
-        
+
         self.assertEqual("test", Base("test").id)
         self.assertEqual(45.7, Base(45.7).id)
 
@@ -38,8 +38,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b2.id, 1)
         self.assertEqual(b3.id, 2)
         self.assertEqual(b4.id, 3)
-
-        
 
     def test_to_json(self):
         self.assertEqual(Base.to_json_string([]), "[]")

@@ -5,8 +5,25 @@ from models.square import Square
 
 
 class TestSquare(unittest.TestCase):
+    def test_id(self):
+        s1 = Square(6, 7, 8, 34)
+        s4 = Square(4, 8, 5, 40)
+
+        self.assertEqual(s1.id, 34)
+        self.assertEqual(s4.id, 40)
+        self.assertEqual(s1.y, 8)
+
+        s7 = Square(8, 6)
+        s8 = Square(6, 4)
+        self.assertEqual(s7.id, s8.id - 1)
+        self.assertEqual(s7.size, 8)
+        self.assertEqual(s8.x, 4)
+
+        s1.size = 23
+        self.assertEqual(s1.size, 23)
+
     def inheritance(self):
-        self.assertIsInstance(Square(7), Base)
+        self.assertIsInstance(Square(9), Base)
 
     def test_args(self):
         with self.assertRaises(TypeError):
