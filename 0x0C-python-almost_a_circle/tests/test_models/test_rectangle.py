@@ -21,6 +21,9 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(8, 7, 9, 3, 8, 5, 2)
 
+        with self.assertRaises(TypeError):
+            Rectangle("1", 3)
+
     def test_ides(self):
         r1 = Rectangle(4, 6, 8, 4, 50)
         r2 = Rectangle(1, 3)
@@ -44,6 +47,8 @@ class TestRectangle(unittest.TestCase):
 
         rec = Rectangle(8, 4)
         self.assertEqual(rec.x, 0)
+
+
 
 
 if __name__ == "__main__":
