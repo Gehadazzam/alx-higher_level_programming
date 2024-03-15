@@ -1,9 +1,14 @@
 #!/usr/bin/python3
+"""
+module to handle database using python and MYSQLDB
+"""
 import MySQLdb
 import sys
 
 
 def show_states(name, pas, database):
+    """show the state"""
+
     connect = MySQLdb.connect(
         host="localhost", user=name, passwd=pas, db=database, port=3306
     )
