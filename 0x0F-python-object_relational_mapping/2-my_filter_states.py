@@ -13,8 +13,10 @@ def showstate(name, pas, database, arg):
         host="localhost", user=name, passwd=pas, db=database, port=3306
     )
     cursor = connect.cursor()
-    query = "SELECT * FROM states WHERE NAME LIKE BINARY %s ORDER BY id ASC"
-    cursor.execute(query, (arg,))
+    cursor.execute(
+        "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id ASC"
+        .format(arg)
+    )
     tab = cursor.fetchall()
     for row in tab:
         print(row)
