@@ -25,5 +25,5 @@ if __name__ == "__main__":
 
     tab = session.query(State).order_by(State.id).all()
     for row in tab:
-        print(f"{_.id}: {_.name}")
+        print(f"{state_.id}: {state_.name}")
     session.close()
