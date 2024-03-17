@@ -8,9 +8,6 @@ from model_state import Base, State
 import sys
 
 if __name__ == "__main__":
-    if len (sys.argv) != 4:
-        sys.exit(1)
-
     username = sys.argv[1]
     pas = sys.argv[2]
     data = sys.argv[3]
@@ -25,5 +22,5 @@ if __name__ == "__main__":
 
     tab = session.query(State).order_by(State.id).all()
     for row in tab:
-        print(f"{state.id}: {state.name}")
+        print(f"{state_.id}: {state_.name}")
     session.close()
