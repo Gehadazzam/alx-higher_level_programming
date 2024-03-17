@@ -8,8 +8,6 @@ from model_state import Base, State
 import sys
 
 if __name__ == "__main__":
-    if len(sys.argv != 4):
-        sys.exit(1)
     username = sys.argv[1]
     pas = sys.argv[2]
     data = sys.argv[3]
@@ -22,7 +20,8 @@ if __name__ == "__main__":
     session = Session()
     Base.metadata.create_all(engine)
 
-    update = session.query(State).filter_by(id == 2).first()
+    update = session.query(State).filter(State.id == 2).first()
+    print(update)
     update.name = 'New Mexico'
     session.commit()
     session.close()
