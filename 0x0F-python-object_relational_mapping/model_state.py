@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+"""module to manipulate data in python using sqlalchemy"""
+
+
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 from sqlalchemy import create_engine
 import sys
-"""module to manipulate data in python using sqlalchemy"""
 Base = declarative_base()
 
 
