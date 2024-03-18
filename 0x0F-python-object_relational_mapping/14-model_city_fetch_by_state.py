@@ -21,8 +21,8 @@ if __name__ == "__main__":
     session = Session()
     Base.metadata.create_all(engine)
 
-    tab = session.query
-    (C, State).filter(State.id == C.id).all()
+    tab = session.query(
+        C, State).filter(State.id == C.id).all()
     for row, col in tab:
         print(f"{col.name}: ({row.id}) {row.name}")
     session.commit()
