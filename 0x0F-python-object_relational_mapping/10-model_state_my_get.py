@@ -20,8 +20,7 @@ if __name__ == "__main__":
     session = Session()
     Base.metadata.create_all(engine)
 
-    tab = session.query
-    (State).filter(State.name == sys.argv[4])
+    tab = session.query(State).filter(State.name == sys.argv[4])
     if tab:
         print(f"{tab.id}")
     else:
