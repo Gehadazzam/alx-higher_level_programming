@@ -1,0 +1,2 @@
+#!/bin/bash
+#DELETE request
