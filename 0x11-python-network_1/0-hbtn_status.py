@@ -9,6 +9,6 @@ if __name__ == "__main__":
     with ur.urlopen(new_request) as response:
         text = response.read()
         print("Body response:")
-        print("\t- type: {type(text)}")
-        print(f"\t- content: {text}")
-        print("\t- utf8 content:", text.decode("utf-8"))
+        print("    - type:", type(text))
+        print("    - content:", text)
+        print("    - utf8 content:", text.decode("utf-8"))
