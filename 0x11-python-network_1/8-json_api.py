@@ -12,12 +12,16 @@ if __name__ == "__main__":
         arg = ""
     else:
         arg = av[1]
-    new_request = r.post("http://0.0.0.0:5000/search_user", {"q", arg})
+    char = {'q': arg}
+    link = 'http://0.0.0.0:5000/search_user'
+    responce = r.post(link, char)
     try:
-        response = new_request.json()
-        if response == {}:
-            print("No result")
+        json_responce = responce.json()
+        if json_responce == {}:
+            print("No responceult")
         else:
-            print("[{}] {}".format(response.get("id"), response.get("name")))
+            print("[{}] {}".format(
+                json_responce.get('id'), json_responce.get('name')
+            ))
     except ValueError:
         print("Not a valid JSON")
