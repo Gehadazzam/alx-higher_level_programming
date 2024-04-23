@@ -2,26 +2,23 @@
 
 const request = require('request');
 const url = process.argv[2];
+let count = 0;
 
-request(url, (err, res, body) => {
-  if (err) {
-    console.log(err);
-  } else if (res.statusCode === 200) {
-    const completed = {};
+request(url, (err, response, body) => {
+  if (err) console.error(err);
+  body = JSON.parse(body).results;
 
-    const tasks = JSON.parse(body);
-    for (const line in tasks) {
-      const task = tasks[line];
-      if (task.completed === true) {
-        if (completed[task.userId] === undefined) {
-          completed[task.userId] = 1;
-        } else {
-          completed[task.userId]++;
-        }
+  for (let i = 0; i < body.length; ++i) {
+    const characters = body[i].characters;
+
+    for (let j = 0; j < characters.length; ++j) {
+      const character = characters[j];
+      const characterId = character.split('/')[5];
+
+      if (characterId === '18') {
+        count += 1;
       }
     }
-    console.log(completed);
-  } else {
-    console.log('An error occured. Status code: ' + res.statusCode);
   }
+  console.log(count);
 });
