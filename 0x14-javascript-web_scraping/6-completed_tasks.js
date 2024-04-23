@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const request = require('request');
-const url = 'https://jsonplaceholder.typicode.com/todos';
+const url = process.argv[2];
 const tracker = {};
 request.get(url, (err, response, body) => {
   if (err) console.error(err);
@@ -9,10 +9,14 @@ request.get(url, (err, response, body) => {
   for (let p = 0; p < all.length; p++) {
     const userId = all[p].userId;
     const completed = all[p].completed;
-    if (!tracker[userId] && completed) {
-      tracker[userId] = 0;
-    }
-    if (completed) tracker[userId]++;
+    if (completed) {
+      if (tracker[all[p].userId] === undefined) {
+        tracker[all[p].userId] = 1;
+      }
+      else {
+        tracker[all[p].userId] += 1;
+      }
   }
+}
   console.log(tracker);
 });
